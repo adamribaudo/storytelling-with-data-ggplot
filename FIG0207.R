@@ -25,6 +25,6 @@ pt <- ggplot(df) + geom_point(aes(x=`Miles Driven`,y=`Cost Per Mile`, color = co
   geom_label(aes(x=avg_miles, y=avg_cost), label = "AVG", nudge_x = -300, nudge_y = .01, size = 3.5, label.size = 0, label.padding = unit(.17, "lines")) + 
   labs(title = "Cost per mile by miles driven", x = "Miles driven per month", y = "Cost per mile") 
 
-ggsave("data\\FIG0207.png", pt)
+ggsave("images\\FIG0207.png", pt)
 pt
   
