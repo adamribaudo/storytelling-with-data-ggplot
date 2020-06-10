@@ -1,5 +1,5 @@
 library(tidyverse)
-library(zoo)
+library(lubridate)
 
 source("include.R")
 theme_set(theme_minimal() + theme(panel.grid.major = element_blank(),
@@ -10,7 +10,7 @@ theme_set(theme_minimal() + theme(panel.grid.major = element_blank(),
                                   axis.title.y = element_text(hjust = 1, margin = margin(0,6,0,15,"pt")),
                                   axis.title.x = element_blank()))
 
-df <- read_csv("data\\FIG0209.csv") %>% mutate(yearmon.zoo = as.yearmon(paste0(Year,Month), "%Y%b"))
+df <- read_csv("data\\FIG0209.csv") %>% mutate(date = ymd(paste(Year,Month,1)))
 
 
 ggplot(df) + 
@@ -22,19 +22,9 @@ ggplot(df) +
   geom_text(aes(x=yearmon.zoo, y=Max),label="Max",data=df %>% slice(n=1)) + 
   geom_text(aes(x=yearmon.zoo, y=Avg, label = Avg),data=df %>% slice(n=n())) + 
   scale_y_continuous(breaks = seq(0,40,5), limit = c(0,40)) + 
-  scale_x_yearmon(format = "%b %Y", n = 12) + 
+  scale_x_date(date_labels=paste(c(rep(" ",11), "%b"), collapse=""), 
+               date_breaks="month", expand=c(0,0)) + 
   labs(y = "Wait time (minutes)", title = "Passport control wait time", subtitle = "Past 13 months")
-  
-  
-  
-  geom_point(aes(x=`Miles Driven`,y=`Cost Per Mile`, color = color), size = 2.5) +
-  scale_color_identity() + 
-  scale_y_continuous(breaks = seq(0,3,.5), limits = c(0,3),labels = scales::dollar_format(prefix="$")) + 
-  scale_x_continuous(limits = c(0,4000), label = scales::comma) + 
-  geom_hline(yintercept = avg_cost, linetype = "longdash") + 
-  geom_point(x = avg_miles,y=avg_cost,size=3.5) + 
-  geom_label(aes(x=avg_miles, y=avg_cost), label = "AVG", nudge_x = -300, nudge_y = .01, size = 3.5, label.size = 0, label.padding = unit(.17, "lines")) + 
-  labs(title = "Cost per mile by miles driven", x = "Miles driven per month", y = "Cost per mile") 
 
 ggsave("plot output\\FIG0209.png", pt, width = 4.5, height = 4.2)
 pt
