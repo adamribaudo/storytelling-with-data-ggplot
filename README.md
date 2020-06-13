@@ -19,6 +19,10 @@ Original data provided by the book's author. Located [here](http://www.storytell
 
 * [FIG0414](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0414.png)
 
+## Chapter 9
+
+* [FIG0926](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0926.png)
+
 # Examples
 
 ![FIG0206](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0206.png)
