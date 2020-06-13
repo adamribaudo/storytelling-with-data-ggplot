@@ -29,7 +29,7 @@ pt <- ggplot(df) + geom_line(aes(x = year, y = value, group = category), color =
   scale_y_continuous(labels = scales::percent, expand = c(.2,0)) +
   geom_line(aes(x = year, y = value, group = category), color = BLUE2, size = 1.2, data = df %>% filter(category_super == category)) + 
   geom_point(aes(x = year, y = value), color = BLUE2, size = 3, data = df %>% filter(category_super == category, year == 2010 | year == 2015)) +
-  geom_text(aes(x = year, y = value, label = value_pct), color = BLUE2, size = 4, nudge_x = -.35, data = df %>% filter(category_super == category, year == 2010)) +
+  geom_text(aes(x = year, y = value, label = value_pct), color = BLUE2, size = 4, nudge_x = -.36, data = df %>% filter(category_super == category, year == 2010)) +
   geom_text(aes(x = year, y = value, label = paste0("bold('",value_pct,"')")), parse = T, color = BLUE2, size = 5, nudge_x = .5, data = df %>% filter(category_super == category, year == 2015)) +
   facet_grid(rows = vars(category_super_wrap), switch = "y") +
   scale_x_discrete(position = "top") + 
