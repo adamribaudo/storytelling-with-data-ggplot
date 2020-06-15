@@ -6,8 +6,7 @@ Original data provided by the book's author. Located [here](http://www.storytell
 # Plots
 ## Chapter 2
 
-* FIG0202
-* FIG0203
+* [FIG0203](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0203.png)
 * [FIG0206](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0206.png)
 * [FIG0207](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0207.png)
 * [FIG0209](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0209.png)
