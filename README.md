@@ -11,7 +11,7 @@ Original data provided by the book's author. Located [here](http://www.storytell
 * [FIG0207](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0207.png)
 * [FIG0209](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0209.png)
 * [FIG0210](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0210.png)
-* FIG0211
+* [FIG0211](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0211.png)
 * FIG0217
 * FIG0219
 * FIG0220
@@ -44,7 +44,6 @@ Original data provided by the book's author. Located [here](http://www.storytell
 * FIG0603
 * FIG0604
 * FIG0605
-* 
 
 ## Chapter 8
 
@@ -62,3 +61,5 @@ Original data provided by the book's author. Located [here](http://www.storytell
 ![Example 1](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/comparison%20examples/FIG0207_comparison.jpg)
 
 ![Example 2](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/comparison%20examples/FIG0316_comparison.jpg)
+
+![Example 3](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/comparison%20examples/FIG0211_comparison.jpg)

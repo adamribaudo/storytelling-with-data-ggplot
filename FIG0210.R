@@ -19,13 +19,14 @@ theme_set(theme_minimal() + theme(panel.grid.major = element_blank(),
 
 df <- read_csv("data\\FIG0210-11.csv") %>% rename(category=`X1`) %>%
   pivot_longer(cols = c(`2014`,`2015`), names_to = "year", values_to = "result") %>%
+  mutate(result_pct = result) %>%
   mutate(result = as.numeric(str_remove(result, "\\%"))/100)
 
 pt <- ggplot(df) + geom_point(aes(x = year, y = result),size=2.5, color = GRAY5) + 
   geom_line(aes(x=year, y=result, group=category),size = 1, color = GRAY5) +
   scale_x_discrete(expand = expansion(1.9,0), limits = c("2014","2015"), labels = c(2014,2015)) +
-  geom_text(aes(x=year, y=result, label = result), nudge_x = -.2, data = df %>% filter(year == 2014), color = GRAY5) +
-  geom_text(aes(x=year, y=result, label = result), nudge_x = .2, data = df %>% filter(year == 2015), color = GRAY5) +
+  geom_text(aes(x=year, y=result, label = result_pct), nudge_x = -.2, data = df %>% filter(year == 2014), color = GRAY5) +
+  geom_text(aes(x=year, y=result, label = result_pct), nudge_x = .2, data = df %>% filter(year == 2015), color = GRAY5) +
   geom_text(aes(x=year,y=result, label = category),nudge_x = -.4, data = df %>% filter(year == "2014"), hjust = 1, color = GRAY5) +
   labs(title = "Employee feedback over time", x = "Survey Year", subtitle = "Survey Category | Percent Favorable") +
   coord_cartesian(clip = "off") +
