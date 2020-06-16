@@ -6,13 +6,13 @@ Original data provided by the book's author. Located [here](http://www.storytell
 # Plots
 ## Chapter 2
 
-* [FIG0203](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0203.png)
-* [FIG0206](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0206.png)
-* [FIG0207](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0207.png)
-* [FIG0209](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0209.png)
-* [FIG0210](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0210.png)
-* [FIG0211](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0211.png) / [Code] (FIG0211.R)
-* [FIG0217](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0217.png) / [Code] (FIG0217.R) - Incomplete
+* [FIG0203](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0203.png) / [Code](FIG0203.R)
+* [FIG0206](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0206.png) / [Code](FIG0206.R)
+* [FIG0207](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0207.png) / [Code](FIG0207.R)
+* [FIG0209](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0209.png) / [Code](FIG0209.R)
+* [FIG0210](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0210.png) / [Code](FIG0210.R)
+* [FIG0211](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0211.png) / [Code](FIG0211.R)
+* [FIG0217](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0217.png) / [Code](FIG0217.R) - Incomplete
 * FIG0219
 * FIG0220
 * FIG0227
@@ -20,13 +20,13 @@ Original data provided by the book's author. Located [here](http://www.storytell
 ## Chapter 3
 
 * FIG0314
-* [FIG0316](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0316.png)
+* [FIG0316](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0316.png) / [Code](FIG0316.R)
 
 
 ## Chapter 4
 
 * FIG0409
-* [FIG0414](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0414.png) (related to FIG0510)
+* [FIG0414](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0414.png) / [Code](FIG0414.R)
 * FIG0415
 
 ## Chapter 5
@@ -34,7 +34,7 @@ Original data provided by the book's author. Located [here](http://www.storytell
 * FIG0503
 * FIG0505
 * FIG0506
-* FIG0510 (related to FIG0414)
+* FIG0510
 * FIG0513
 
 ## Chapter 6
@@ -53,7 +53,7 @@ Original data provided by the book's author. Located [here](http://www.storytell
 
 * FIG0902
 * FIG0920
-* [FIG0926](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0926.png)
+* [FIG0926](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0926.png) / [Code](FIG0926.R)
 * FIG0932
 
 # Examples
