@@ -11,8 +11,8 @@ Original data provided by the book's author. Located [here](http://www.storytell
 * [FIG0207](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0207.png)
 * [FIG0209](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0209.png)
 * [FIG0210](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0210.png)
-* [FIG0211](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0211.png)
-* FIG0217
+* [FIG0211](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0211.png) / [Code] (FIG0211.R)
+* [FIG0217](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0217.png) / [Code] (FIG0217.R) - Incomplete
 * FIG0219
 * FIG0220
 * FIG0227

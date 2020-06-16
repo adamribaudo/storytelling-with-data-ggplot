@@ -42,6 +42,6 @@ pt <- ggplot(df) + geom_point(aes(x = year, y = result, color = color),size=2.5)
   coord_cartesian(clip = "off") +
   lemon::coord_capped_cart(bottom='both') + ylim(.2,.96)
 
-#ggsave("plot output\\FIG0211.png", pt, width = 6, height = 6)
+ggsave("plot output\\FIG0211.png", pt, width = 6, height = 6)
 
 pt
