@@ -22,7 +22,7 @@ theme_set(theme_minimal() + theme(panel.grid.major = element_blank(),
                                   plot.caption = element_text(hjust = 0, size = 8, color = GRAY8),
                                   plot.margin = unit(c(1,4,1,1),"cm")))
 
-df <- read_csv("data\\FIG0314.csv") %>% mutate(value = as.numeric(str_remove_all(value, "%"))) %>%
+df <- read_csv(file.path("data","FIG0314.csv")) %>% mutate(value = as.numeric(str_remove_all(value, "%"))) %>%
   mutate(category = fct_rev(fct_relevel(factor(category), "Demonstration of results", "Content expertise", "Local knowledge", "National reputation", "Affordability of services", "Previous work together", "Colleague recommendation"))) %>%
   mutate(fill = case_when(category == "Demonstration of results" ~ GRAY2,
                           category == "Affordability of services" ~ GRAY2,
@@ -39,5 +39,5 @@ pt <- ggplot(df, aes(x = category, y = value)) + geom_col(aes(fill = fill), widt
        title = "Demonstrating effectiveness is most important consideration\nwhen selecting a provider",
        subtitle = "In general, what attributes are the most important\nto you in selecting a service provider\n(Choose up to 3)")
   
-ggsave("plot output\\FIG0314.png", pt, width = 6, height = 4)
+ggsave(file.path("plot output","FIG0314.png"), pt, width = 6, height = 4)
 pt
