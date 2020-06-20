@@ -22,7 +22,7 @@ theme_set(theme_minimal() + theme(panel.grid.major = element_blank(),
                                   plot.caption = element_text(hjust = 0, size = 8, color = GRAY8),
                                   plot.margin = unit(c(1,4,1,1),"cm")))
 
-df <- read_csv(file.path("data","FIG0314.csv")) %>% mutate(value = as.numeric(str_remove_all(value, "%"))) %>%
+df <- read_csv(file.path("data","FIG0314.csv")) %>% mutate(value = as.numeric(str_remove_all(value, "%"))/100) %>%
   mutate(category = fct_rev(fct_relevel(factor(category), "Demonstration of results", "Content expertise", "Local knowledge", "National reputation", "Affordability of services", "Previous work together", "Colleague recommendation"))) %>%
   mutate(fill = case_when(category == "Demonstration of results" ~ GRAY2,
                           category == "Affordability of services" ~ GRAY2,
@@ -31,9 +31,9 @@ df <- read_csv(file.path("data","FIG0314.csv")) %>% mutate(value = as.numeric(st
 
 pt <- ggplot(df, aes(x = category, y = value)) + geom_col(aes(fill = fill), width = .8) +
   scale_x_discrete() + 
-  scale_y_continuous(position = "right") +
+  scale_y_continuous(position = "right", limits=c(0,.8), labels = scales::percent) +
   scale_fill_identity() + 
-  coord_capped_flip(bottom = "both") + 
+  coord_capped_flip(top = "both") + 
   labs(caption = "Data source: xyz; indluces N number of surbey respondents.\nNote that respondents were able to choose up to 3 options.",
        y = "% selecting given attribute",
        title = "Demonstrating effectiveness is most important consideration\nwhen selecting a provider",
