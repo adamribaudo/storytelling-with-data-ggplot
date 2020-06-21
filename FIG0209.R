@@ -18,7 +18,7 @@ theme_set(theme_minimal() + theme(panel.grid.major = element_blank(),
                                   plot.subtitle = element_text(color = GRAY4),
                                   plot.margin = unit(c(1,1,1,1),"cm")))
 
-df <- read_csv("data\\FIG0209.csv") %>% mutate(date = ymd(paste(Year,Month,1)))
+df <- read_csv(file.path("data","FIG0209.csv")) %>% mutate(date = ymd(paste(Year,Month,1)))
 
 
 pt <- ggplot(df) + 
@@ -34,5 +34,7 @@ pt <- ggplot(df) +
                limits=c(ymd("2014-08-16",ymd("2015-10-01")))) +
   labs(y = "Wait time (minutes)", title = "Passport control wait time", subtitle = "Past 13 months") 
 
-ggsave("plot output\\FIG0209.png", pt, width = 6.5, height = 4.2)
+dev.new(width = 6.5, height = 4.2, unit = "in", noRStudioGD =T)
 pt
+
+ggsave(file.path("plot output","FIG0209.png"), pt, width = 6.5, height = 4.2)
