@@ -34,7 +34,8 @@ pt <- ggplot(df) +
                limits=c(ymd("2014-08-16",ymd("2015-10-01")))) +
   labs(y = "Wait time (minutes)", title = "Passport control wait time", subtitle = "Past 13 months") 
 
-dev.new(width = 6.5, height = 4.2, unit = "in", noRStudioGD =T)
+width <- 6.5
+height <- 4.2
+dev.new(width = width, height = height, unit = "in", noRStudioGD =T)
 pt
-
-ggsave(file.path("plot output","FIG0209.png"), pt, width = 6.5, height = 4.2)
+ggsave(file.path("plot output","FIG0209.png"), pt, width = width, height = height)
