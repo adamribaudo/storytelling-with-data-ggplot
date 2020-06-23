@@ -1,6 +1,5 @@
 library(tidyverse)
 library(forcats)
-library(lemon)
 
 source("include.R")
 theme_set(theme_minimal() + theme(panel.grid.major = element_blank(),
