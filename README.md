@@ -3,6 +3,14 @@ Recreation of Cole Nussbaumer Knaflic's _Storytelling with Data_ (Wiley, 2015) p
 
 Original data provided by the book's author. Located [here](http://www.storytellingwithdata.com/book/downloads).
 
+# Examples
+
+![Example 1](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/comparison%20examples/FIG0207_comparison.jpg)
+
+![Example 2](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/comparison%20examples/FIG0316_comparison.jpg)
+
+![Example 3](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/comparison%20examples/FIG0211_comparison.jpg)
+
 # Plots
 ## Chapter 2
 
@@ -32,8 +40,7 @@ Original data provided by the book's author. Located [here](http://www.storytell
 ## Chapter 5
 
 * [FIG0504](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0504.png) / [Code](FIG0504.R)
-* FIG0505
-* FIG0506
+* [FIG0506](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0506.png) / [Code](FIG0506.R)
 * FIG0510
 * FIG0513
 
@@ -56,10 +63,4 @@ Original data provided by the book's author. Located [here](http://www.storytell
 * [FIG0926](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0926.png) / [Code](FIG0926.R)
 * FIG0932
 
-# Examples
 
-![Example 1](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/comparison%20examples/FIG0207_comparison.jpg)
-
-![Example 2](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/comparison%20examples/FIG0316_comparison.jpg)
-
-![Example 3](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/comparison%20examples/FIG0211_comparison.jpg)
