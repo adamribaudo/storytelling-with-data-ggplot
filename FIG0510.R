@@ -18,10 +18,10 @@ theme_set(theme_minimal() + theme(panel.grid.major = element_blank(),
                                   ))
 
 df <- read_csv(file.path("data","FIG0410-14.csv")) %>% rename(ticket_type = X1) %>%
-  mutate(ticket_type = case_when(ticket_type == "Ticket Volume Received" ~ "Received",
-                                 ticket_type == "Ticket Volume Processed" ~ "Processed")) %>%
+  mutate(ticket_type = forcats::fct_rev(factor(case_when(ticket_type == "Ticket Volume Received" ~ "Received",
+                                 ticket_type == "Ticket Volume Processed" ~ "Processed")))) %>%
   pivot_longer(cols = !ticket_type, names_to = "month", values_to = "tickets") %>%
-  mutate(date = lubridate::ymd(paste0("2000-",match(month,month.abb),"-01")))
+  mutate(date = lubridate::ymd(paste0("2000-",match(month,month.abb),"-01"))) 
 
 grob_explanation <- grobTree(richtext_grob(
   "<span style='background-color:white'><b>2 employees quit in May.</b> We nearly kept up with<br>incoming bolume in the following two months, but fell<br>behind with the increase in Aug and haven't been able<br>to catch up since</span>", 
@@ -36,7 +36,7 @@ pt <- ggplot(df) + geom_line(aes(x = date, y = tickets, color = ticket_type),siz
   geom_vline(xintercept = ymd("2000-05-01"), color = GRAY8) + 
   scale_x_date(date_labels = "%b", date_breaks = "1 month", expand = c(0,0)) + 
   scale_y_continuous(breaks = seq(0,300,50), limits = c(0,300)) + 
-  scale_color_manual(values = c("Received" = GRAY3, "Processed" = BLUE2), guide = NULL) + 
+  scale_color_manual(values = c("Received" = GRAY7, "Processed" = BLUE1), guide = NULL) + 
   coord_cartesian(clip = "off") + 
   labs(title = "Ticket volume over time", 
        caption = "Data source: XYZ Dashboard, as of 12/31/2014 | A detailed analysis on tickets processed per\nperson and time to resolve issues was undertaken to inform this request and can be provided.",

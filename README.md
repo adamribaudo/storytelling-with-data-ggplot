@@ -11,6 +11,8 @@ Original data provided by the book's author. Located [here](http://www.storytell
 
 ![Example 3](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/comparison%20examples/FIG0211_comparison.jpg)
 
+![Example 4](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/comparison%20examples/FIG0510_comparison.jpg)
+
 # Plots
 ## Chapter 2
 
