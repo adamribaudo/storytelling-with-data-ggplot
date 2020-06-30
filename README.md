@@ -48,7 +48,7 @@ Original data provided by the book's author. Located [here](http://www.storytell
 
 ## Chapter 6
 
-* FIG0601
+* [FIG0601](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0601.png) / [Code](FIG0601.R)
 * FIG0602
 * FIG0603
 * FIG0604
