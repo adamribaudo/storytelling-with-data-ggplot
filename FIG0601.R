@@ -1,8 +1,4 @@
-# TODO: find the geom_text segment labels as a grob and move them to the left
-# TODO: Add a vertical line to the right of each bar
-
 library(tidyverse)
-library(lubridate)
 library(grid)
 library(gridExtra)
 library(gridtext)
