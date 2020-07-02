@@ -1,4 +1,3 @@
-# TODO: find the geom_text segment labels as a grob and move them to the left
 # TODO: Add a vertical line to the right of each bar
 
 library(tidyverse)
@@ -36,9 +35,9 @@ pt <- ggplot(df, aes(x = Population, y = value, fill = Segment)) +
             aes(label = scales::percent(accuracy = 1, x=value), color = Segment), size = 4.5) + 
   scale_color_manual(guide = F, values = c(GRAY2,GRAY2,GRAY9,GRAY9,GRAY9,GRAY2,GRAY2)) + 
   
- # geom_text(data = df %>% filter(Population == "US Population"), 
- #         position = ggplot2::position_stack(vjust = .5), aes(label = Segment)
- #          ) + 
+  geom_text(data = df %>% filter(Population == "US Population"), 
+          position = ggplot2::position_stack(vjust = .5), aes(label = Segment), hjust = 2.3,
+           ) + 
   scale_y_continuous(expand = c(0,0)) + 
   coord_cartesian(clip = "off") + 
   labs(title = "Distribution by customer segment") + 
@@ -48,6 +47,6 @@ pt <- ggplot(df, aes(x = Population, y = value, fill = Segment)) +
  
 height <- 5.5
 width <- 8
-dev.new(width = width, height = height, units = "in", noRStudioGD = T)
+#dev.new(width = width, height = height, units = "in", noRStudioGD = F)
 pt
 ggsave(file.path("plot output", "FIG0513.png"), pt, width = width, height = height)
