@@ -40,6 +40,6 @@ pt <- text_data %>%
                 lineheight = 1.5) +
   xlim(0, 0.01)
 
-ggsave(file.path("plot output","FIG0203.png"), pt, width = 3, height = 2.5)
+ggsave(file.path("plot output","FIG0203.png"), pt, width = 3.5, height = 2.5)
 pt
 
