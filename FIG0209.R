@@ -2,8 +2,6 @@ rm(list = ls())
 library(tidyverse)
 library(lubridate)
 library(grid)
-
-library(tidyverse)
 source("theme/theme_swd.R")
 
 theme_set(theme_swd())
