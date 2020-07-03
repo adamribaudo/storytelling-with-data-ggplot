@@ -1,23 +1,23 @@
+rm(list = ls())
 library(tidyverse)
 library(lemon)
 
-source("include.R")
-theme_set(theme_minimal() + theme(panel.grid.major = element_blank(),
-                                  panel.grid.minor = element_blank(),
-                                  axis.ticks.y = element_blank(),
-                                  axis.ticks.x = element_line(color=GRAY9),
-                                  axis.line.x = element_line(size = .1, color=GRAY9),
-                                  axis.line.y = element_blank(),
-                                  axis.text.y = element_blank(),
-                                  axis.text.x = element_text(color = GRAY6, size = 10),
-                                  axis.title.x = element_text(color = GRAY5, size = 10, hjust = .425),
-                                  axis.title.y = element_blank(),
-                                  strip.placement = "outside",
-                                  strip.background = element_rect(fill=NA,color=GRAY9),
-                                  plot.subtitle = element_text(color = GRAY4, size = 9, hjust=.22),
-                                  plot.margin = unit(c(1,0,1,1),"cm")))
 
-df <- read_csv("data\\FIG0210-11.csv") %>% rename(category=`X1`) %>%
+library(tidyverse)
+source("theme/theme_swd.R")
+
+theme_set(theme_swd() +
+            theme(axis.ticks.y = element_blank(),
+                  axis.line.x = element_line(size = .1, color=GRAY9),
+                  axis.line.y = element_blank(),
+                  axis.text.y = element_blank(),
+                  axis.text.x = element_text(color = GRAY6, size = 10),
+                  axis.title.x = element_text(color = GRAY5, size = 10, hjust = .425),
+                  axis.title.y = element_blank(),
+                  plot.title = element_text(vjust = -4, size= 16),
+                  plot.subtitle = element_text(color = GRAY4, size = 11, hjust=.225, vjust = -15)))
+          
+df <- read_csv(file.path("data", "FIG0210-11.csv")) %>% rename(category=`X1`) %>%
   pivot_longer(cols = c(`2014`,`2015`), names_to = "year", values_to = "result") %>%
   mutate(result_pct = result) %>%
   mutate(result = as.numeric(str_remove(result, "\\%"))/100)
@@ -32,6 +32,6 @@ pt <- ggplot(df) + geom_point(aes(x = year, y = result),size=2.5, color = GRAY5)
   coord_cartesian(clip = "off") +
   lemon::coord_capped_cart(bottom='both') + ylim(.2,.96)
 
-ggsave("plot output\\FIG0210.png", pt, width = 6, height = 6)
+ggsave(file.path("plot output", "FIG0210.png"), pt, width = 6, height = 6)
 
 pt

@@ -2,15 +2,15 @@ rm(list=ls())
 library(tidyverse)
 library(ggtext)
 
-source("include.R")
-theme_set(theme_minimal() + theme(panel.grid.major = element_blank(),
-                                  panel.grid.minor = element_blank(),
-                                  axis.ticks = element_blank(),
-                                  axis.title = element_blank(),
-                                  axis.line = element_blank(),
-                                  axis.text.y = element_blank(),
-                                  axis.text.x = element_blank(),
-                                  plot.margin = unit(c(0,0,0,0),"cm")
+source(file.path("theme","theme_swd.R"))
+theme_set(theme_swd() + theme(axis.ticks = element_blank(),
+                              axis.title = element_blank(),
+                              axis.line = element_blank(),
+                              axis.text.y = element_blank(),
+                              axis.text.x = element_blank(),
+                              axis.title.x = element_blank(),
+                              axis.title.y = element_blank(),
+                              plot.margin = unit(c(0,0,0,0),"cm")
 ))
 
 df <- read_csv(file.path("data","FIG0202-3.csv")) %>% mutate(Value_pct = scales::percent(Value/100))
@@ -37,8 +37,7 @@ pt <- text_data %>%
   geom_richtext(aes(label = label), 
                 hjust = 0, 
                 label.color = NA, 
-                lineheight = 1.5, 
-                family = "Helvetica") +
+                lineheight = 1.5) +
   xlim(0, 0.01)
 
 ggsave(file.path("plot output","FIG0203.png"), pt, width = 3.5, height = 2.5)
