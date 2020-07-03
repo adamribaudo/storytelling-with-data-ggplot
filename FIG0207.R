@@ -1,3 +1,4 @@
+rm(list=ls())
 library(tidyverse)
 source("theme/theme_swd.R")
 
