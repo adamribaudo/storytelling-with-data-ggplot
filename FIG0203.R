@@ -2,7 +2,7 @@ rm(list=ls())
 library(tidyverse)
 library(ggtext)
 
-source("theme/theme_swd.R")
+source(file.path("theme","theme_swd.R"))
 theme_set(theme_swd() + theme(axis.ticks = element_blank(),
                               axis.title = element_blank(),
                               axis.line = element_blank(),
