@@ -13,6 +13,7 @@ BLUE3 <- "#94B2D7"
 BLUE4 <- "#94AFC5"
 RED1 <- "#C3514E"
 RED2 <- "#E6BAB7"
+RED3 <- "#800000"
 GREEN1 <- "#0C8040"
 GREEN2 <- "#9ABB59"
 GREEN3 <- "#31859C"
@@ -32,6 +33,8 @@ theme_swd <- function() {
       axis.title.x = element_text(hjust = 0, margin = margin(6, 0, 15, 0, "pt")),
       plot.subtitle = element_text(color = GRAY4),
       plot.title.position = "plot", # This aligns the plot title to the very left edge
+      plot.caption = element_text(hjust = 0, color = GRAY6),
+      plot.caption.position = "plot",
       plot.margin = margin(.5,.5,.5,.5,"cm")
     ) 
 }
