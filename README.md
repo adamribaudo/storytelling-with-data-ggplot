@@ -50,7 +50,7 @@ Original data provided by the book's author. Located [here](http://www.storytell
 
 * [FIG0601](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0601.png) / [Code](FIG0601.R)
 * [FIG0602](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0602.png) / [Code](FIG0602.R)
-* FIG0603
+* [FIG0603](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0603.png) / [Code](FIG0603.R)
 * FIG0604
 * FIG0605
 
