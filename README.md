@@ -52,7 +52,7 @@ Original data provided by the book's author. Located [here](http://www.storytell
 * [FIG0602](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0602.png) / [Code](FIG0602.R)
 * [FIG0603](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0603.png) / [Code](FIG0603.R)
 * [FIG0604](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0604.png) / [Code](FIG0604.R) - Incomplete
-* FIG0605
+* [FIG0605](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0605.png) / [Code](FIG0605.R) - Incomplete
 
 ## Chapter 8
 
