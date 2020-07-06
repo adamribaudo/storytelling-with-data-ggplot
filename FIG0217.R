@@ -1,10 +1,7 @@
 # TODO:
-# - add lines between bars
 # - add 2nd row of x axis labels
-# - can't align bar labels to top of each bar without manually adjusting each one
-
+rm(list = ls())
 library(tidyverse)
-
 source("theme/theme_swd.R")
 
 theme_set(theme_swd() + theme(
@@ -24,9 +21,11 @@ df <- read_csv(file.path("data", "FIG0217.csv")) %>%
   rename(Category = `Label 2`) %>%
   pivot_longer(cols = -Category, names_to = "Series", values_to = "Value") %>%
   mutate(Category = forcats::fct_relevel(factor(Category), "1/1/2014", "Hires", "Transfers In", "Transfers Out", "Exits", "12/31/2014")) %>%
+  # Calculate Category bar sizes (used by geom_segment later)
   group_by(Category) %>%
-  dplyr::summarise(ymin = min(Value[Series == "Invisible Series"]), ymax = ymin + min(Value[Series == "Visible Series"])) %>%
-  ungroup() %>%
+  dplyr::summarise(ymin = min(Value[Series == "Invisible Series"]), 
+                   ymax = ymin + min(Value[Series == "Visible Series"])) %>%
+  # Data for waterfall bars
   mutate(
     change = ymax - ymin,
     text_label = case_when(
@@ -35,38 +34,47 @@ df <- read_csv(file.path("data", "FIG0217.csv")) %>%
       TRUE ~ as.character(change)
     )
   ) %>%
-  unique()
-
-joins_df <- df %>%
-  arrange(Category) %>%
+  # Data for the lines between the bars
   mutate(
     next_category = lead(Category, 1),
     current_y = case_when(
-      Category %in% c("1/1/2014", "Hires", "Transfers In") ~ ymax,
-      TRUE ~ ymin
+      # Determine whether to take the top or bottom of the current bar as the starting point
+      Category %in% c("1/1/2014", "Hires", "Transfers In") ~ ymax, # Top of the current bar
+      TRUE ~ ymin # Bottom of the current bar
     ),
+    # Determine whether to join to the top or bottom of the next bar
     next_y = case_when(
-      Category %in% c("1/1/2014", "Hires") ~ lead(ymin, 1),
-      TRUE ~ lead(ymax, 1)
+      Category %in% c("1/1/2014", "Hires") ~ lead(ymin, 1),  # Bottom of the next bar
+      TRUE ~ lead(ymax, 1) # Top of the next bar
     )
-  ) %>%
-  filter(!is.na(next_category))
+  )
 
 pt <- df %>%
   ggplot(aes(x = Category)) +
+  # The two geom_segment calls here are only so that we can have slightly different position_nudge values for + and - bars. Probably overkill
   geom_segment(
-    data = joins_df,
+    data = df %>% filter(next_category %in% c('Hires', 'Transfers In', 'Transfers Out')),
     aes(xend = next_category, y = current_y, yend = next_y),
     color = GRAY9,
-    linetype = 2
+    position = position_nudge(y = -0.3, x = -0.35),
+    size = 0.25,
+    linetype = 2 # Dashed line
+  ) +
+  geom_segment(
+    data = df %>% filter(next_category %in% c('Exits', '12/31/2014')),
+    aes(xend = next_category, y = current_y, yend = next_y),
+    color = GRAY9,
+    position = position_nudge(y = 0.1, x = -0.35),
+    size = 0.25,
+    linetype = 2 # Dashed line
   ) +
   scale_x_discrete(drop = FALSE) +
   geom_rect(aes(xmin = Category, xmax = Category, ymin = ymin, ymax = ymax),
     color = BLUE2,
     size = 20
   ) +
-  geom_text(aes(y = ymax, label = text_label, vjust = 1.5), color = "white", size = 3.5) +
+  geom_text(aes(y = ymax, label = text_label, vjust = 1.5), color = "white", size = 2) +
   labs(title = "2014 Headcount math", subtitle = "Though more employees transferred out of the team than transferred in,\naggressive hiring means overall headcount (HC) increased 16% over the course of the year")
 
-ggsave(file.path("plot output", "FIG0217.png"), pt, width = 5.7, height = 4)
+ggsave(file.path("plot output", "FIG0217.png"), pt, width = 6, height = 4)
 pt
