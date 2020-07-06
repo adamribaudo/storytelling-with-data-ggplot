@@ -11,8 +11,9 @@ theme_set(theme_swd() + theme(
   axis.ticks.y = element_blank(),
   axis.line.y = element_blank(),
   axis.text.y = element_blank(),
+  axis.text.x = element_text(color = "black"),
   axis.line.x = element_line(),
-  plot.subtitle = element_text(color = GRAY2, size = 9, hjust = 0),
+  plot.subtitle = element_text(color = GRAY3, size = 12, hjust = 0),
   plot.margin = unit(c(1, 1, 1, 1), "cm")
 ))
 
@@ -69,12 +70,18 @@ pt <- df %>%
     linetype = 2 # Dashed line
   ) +
   scale_x_discrete(drop = FALSE) +
-  geom_rect(aes(xmin = Category, xmax = Category, ymin = ymin, ymax = ymax),
-    color = BLUE2,
-    size = 20
+  scale_y_continuous(expand = c(0,0)) + 
+  geom_rect(aes(xmin = as.numeric(Category) - .3, xmax = as.numeric(Category) + .3, ymin = ymin, ymax = ymax),
+    color = BLUE2, fill = BLUE2,
+    # Setting size=20 increase width of bars, but also increased their height. Setting to 1 and using as.numeric(Category) in aesthetics to assign rect width
+    size = 1
   ) +
-  geom_text(aes(y = ymax, label = text_label, vjust = 1.5), color = "white", size = 2) +
+  geom_text(aes(y = ymax, label = text_label, vjust = 1.1), color = "white", size = 4) +
   labs(title = "2014 Headcount math", subtitle = "Though more employees transferred out of the team than transferred in,\naggressive hiring means overall headcount (HC) increased 16% over the course of the year")
 
-ggsave(file.path("plot output", "FIG0217.png"), pt, width = 6, height = 4)
+width <- 8
+height <- 5
+dev.new(width = width, height = height, noRStudioGD = T)
 pt
+ggsave(file.path("plot output", "FIG0217.png"), pt, width = width, height = height)
+
