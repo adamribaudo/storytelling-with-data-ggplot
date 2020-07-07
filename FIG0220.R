@@ -1,8 +1,3 @@
-# TODO: 
-# Having trouble mixing bold text into plain text while also making the line wrap around the entire sentence. 
-# Example: "plain('we bring\n')~bold('25\ncandidates\nonsite')~plain('for interviews...')"
-
-
 library(tidyverse)
 library(ggtext)
 source("theme/theme_swd.R")
