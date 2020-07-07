@@ -17,6 +17,7 @@ RED3 <- "#800000"
 GREEN1 <- "#0C8040"
 GREEN2 <- "#9ABB59"
 GREEN3 <- "#31859C"
+GREEN4 <- "#4BACC6"
 ORANGE1 <- "#F79747"
 
 theme_swd <- function() {
