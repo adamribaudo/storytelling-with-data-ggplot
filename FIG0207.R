@@ -1,7 +1,10 @@
 rm(list=ls())
 library(tidyverse)
 library(lemon)
+source("helper_functions.R")
 source("theme/theme_swd.R")
+
+theme_set(theme_swd())
 
 df <- read_csv(file.path("data", "FIG0206-7.csv")) %>% 
   mutate(`Cost Per Mile` = parse_number(`Cost Per Mile`),
@@ -21,9 +24,8 @@ pt <- ggplot(df) +
   geom_point(x = avg_miles,y=avg_cost,size=3.5) + 
   geom_label(x = avg_miles, y = avg_cost, label = "AVG", hjust = 1.25, label.size = 0) +  
   labs(title = "Cost per mile by miles driven", x = "Miles driven per month", y = "Cost per mile") +
-  coord_capped_cart(bottom = "right", left = "top") +
-  theme_swd()
+  coord_capped_cart(bottom = "right", left = "top")
 
-ggsave(file.path("plot output", "FIG0207.png"), pt, width = 4.5, height = 4.2)
-pt
-  
+pt %>% 
+  save_and_show_plot(width = 4.5, height = 4.2, "FIG0207.png")
+

@@ -1,6 +1,7 @@
 rm(list=ls())
 library(tidyverse)
 library(ggtext)
+source("helper_functions.R")
 source("theme/theme_swd.R")
 
 theme_set(theme_swd() + theme(
@@ -27,5 +28,5 @@ pt <- ggplot() +
   geom_richtext(aes(x = 10, y = 3.5), label = "we bring **25 <br/>candidates onsite** <br/>for\ninterviews...", color = GRAY6, hjust = 0, label.color = NA) +
   geom_richtext(aes(x = 10, y = 0), label = "and <br /> **extend 9 offers.**", color = GREEN3, hjust = 0, label.color = NA)
 
-ggsave(file.path("plot output", "FIG0220.png"), pt, width = 5, height = 4)
-pt
+pt %>% 
+  save_and_show_plot(width = 5, height = 4, "FIG0220.png")

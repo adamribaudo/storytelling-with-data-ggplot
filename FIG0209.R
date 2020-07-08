@@ -1,7 +1,7 @@
 rm(list = ls())
 library(tidyverse)
 library(lubridate)
-library(grid)
+source("helper_functions.R")
 source("theme/theme_swd.R")
 
 theme_set(theme_swd())
@@ -25,7 +25,6 @@ pt <- ggplot(df, aes(x = date)) +
   ) +
   labs(y = "Wait time (minutes)", x = NULL, title = "Passport control wait time", subtitle = "Past 13 months")
 
-pt
-width <- 6.5
-height <- 4.2
-ggsave(file.path("plot output", "FIG0209.png"), pt, width = width, height = height)
+pt %>% 
+  save_and_show_plot(width = 6, height = 4, "FIG0209.jpg")
+
