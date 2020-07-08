@@ -7,10 +7,12 @@ source("theme/theme_swd.R")
 theme_set(theme_swd() + theme(
   axis.title.y = element_blank(),
   axis.ticks.y = element_blank(),
+  axis.text.y = element_text(color = GRAY3, size = 13),
   panel.border = element_blank(),
   axis.line = element_line(),
-  axis.title.x = element_text(hjust = 0.03),
-  plot.subtitle = element_markdown(size = 9, hjust = 0.38),
+  axis.title.x = element_text(hjust = 0.03, size = 12, color = GRAY6),
+  axis.text.x = element_text(size = 11),
+  plot.subtitle = element_markdown(size = 9, hjust = 0.65),
   axis.line.y = element_blank()
 ))
 
@@ -60,5 +62,9 @@ pt <- df %>%
                      labels = scales::percent_format(accuracy = 1)) +
   coord_capped_cart(top = "both")
 
-ggsave(file.path("plot output", "FIG0219.png"), pt, width = 5, height = 3)
+width = 6
+height = 4
+dev.new(width = width, height = height, noRStudioGD = T)
 pt
+ggsave(file.path("plot output", "FIG0219.png"), pt, width = width, height = height)
+
