@@ -26,5 +26,5 @@ pt <- ggplot(df, aes(x = date)) +
   labs(y = "Wait time (minutes)", x = NULL, title = "Passport control wait time", subtitle = "Past 13 months")
 
 pt %>% 
-  save_and_show_plot(width = 6, height = 4, "FIG0209.jpg")
+  save_and_show_plot(width = 6, height = 4, "FIG0209.png")
 
