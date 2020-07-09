@@ -2,6 +2,7 @@
 # - add 2nd row of x axis labels
 rm(list = ls())
 library(tidyverse)
+source("helper_functions.R")
 source("theme/theme_swd.R")
 
 theme_set(theme_swd() + theme(
@@ -13,7 +14,7 @@ theme_set(theme_swd() + theme(
   axis.text.y = element_blank(),
   axis.text.x = element_text(color = "black"),
   axis.line.x = element_line(),
-  plot.subtitle = element_text(color = GRAY3, size = 12, hjust = 0),
+  plot.subtitle = element_text(color = GRAY3, size = 8, hjust = 0),
   plot.margin = unit(c(1, 1, 1, 1), "cm")
 ))
 
@@ -76,12 +77,10 @@ pt <- df %>%
     # Setting size=20 increase width of bars, but also increased their height. Setting to 1 and using as.numeric(Category) in aesthetics to assign rect width
     size = 1
   ) +
-  geom_text(aes(y = ymax, label = text_label, vjust = 1.1), color = "white", size = 4) +
+  geom_text(aes(y = ymax, label = text_label, vjust = 1.1), color = "white") +
   labs(title = "2014 Headcount math", subtitle = "Though more employees transferred out of the team than transferred in,\naggressive hiring means overall headcount (HC) increased 16% over the course of the year")
 
-width <- 8
-height <- 5
-dev.new(width = width, height = height, noRStudioGD = T)
-pt
-ggsave(file.path("plot output", "FIG0217.png"), pt, width = width, height = height)
+pt %>% 
+  save_and_show_plot(width = 8, height = 5, "FIG0217.png")
+
 

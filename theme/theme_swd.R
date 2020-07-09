@@ -22,21 +22,22 @@ GREEN4 <- "#4BACC6"
 ORANGE1 <- "#F79747"
 
 theme_swd <- function() {
-  theme_minimal(base_size = 12, base_family = "Helvetica") +
+  theme_minimal(base_size = 8, base_family = "Helvetica") +
     theme(
       panel.grid.major = element_blank(),
       panel.grid.minor = element_blank(),
       axis.line = element_line(size = .1, color = GRAY9),
-      axis.text = element_text(color = GRAY7, size = 10),
+      axis.text = element_text(color = GRAY7),
       axis.ticks.x = element_line(size = 0.5, color = GRAY9),
       axis.ticks.y = element_line(size = 0.5, color = GRAY9),
-      axis.title = element_text(color = GRAY3, size = 10),
+      axis.title = element_text(color = GRAY3),
       axis.title.y = element_text(hjust = 1, margin = margin(0, 6, 0, 15, "pt")),
       axis.title.x = element_text(hjust = 0, margin = margin(6, 0, 15, 0, "pt")),
-      plot.subtitle = element_text(color = GRAY4),
+      plot.subtitle = element_text(color = GRAY4, size= 8),
+      plot.title = element_text(color = GRAY4, size= 12),
       plot.title.position = "plot", # This aligns the plot title to the very left edge
       plot.caption = element_text(hjust = 0, color = GRAY6),
       plot.caption.position = "plot",
-      plot.margin = margin(.5,.5,.5,.5,"cm")
-    ) 
+      plot.margin = margin(.5,.5,.5,.5,"cm"),
+      strip.text = element_text(color = GRAY7)) 
 }

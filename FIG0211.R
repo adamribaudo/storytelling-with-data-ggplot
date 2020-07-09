@@ -1,19 +1,19 @@
 rm(list = ls())
 library(tidyverse)
 library(lemon)
-
+source("helper_functions.R")
 source("theme/theme_swd.R")
 theme_set(theme_swd() + theme(    axis.ticks.y = element_blank(),
                                   axis.ticks.x = element_line(color=GRAY9),
                                   axis.line.x = element_line(size = .1, color=GRAY9),
                                   axis.line.y = element_blank(),
                                   axis.text.y = element_blank(),
-                                  axis.text.x = element_text(color = GRAY6, size = 10),
-                                  axis.title.x = element_text(color = GRAY5, size = 10, hjust = .425),
+                                  axis.text.x = element_text(color = GRAY6),
+                                  axis.title.x = element_text(color = GRAY5, hjust = .425),
                                   axis.title.y = element_blank(),
                                   strip.placement = "outside",
                                   strip.background = element_rect(fill=NA,color=GRAY9),
-                                  plot.subtitle = element_text(color = GRAY4, size = 9, hjust=.22),
+                                  plot.subtitle = element_text(color = GRAY4, size = 8, hjust=.22),
                                   plot.margin = unit(c(1,0,1,1),"cm")))
 
 df <- read_csv(file.path("data","FIG0210-11.csv")) %>% rename(category=`X1`) %>%
@@ -38,8 +38,8 @@ pt <- ggplot(df) + geom_point(aes(x = year, y = result, color = color),size=2.5)
   geom_text(aes(x=year,y=result, label = paste0("bold('",category,"')"), color = color), parse = T, nudge_x = -.4, data = df %>% filter(year == 2014,category == "Career development"), hjust = 1) +
   
   labs(title = "Employee feedback over time", x = "Survey Year", subtitle = "Survey Category | Percent Favorable") +
-  coord_cartesian(clip = "off") +
+  #coord_cartesian(clip = "off") +
   lemon::coord_capped_cart(bottom='both') + ylim(.2,.96)
 
-ggsave(file.path("plot output","FIG0211.png"), pt, width = 6, height = 6)
-pt
+pt %>% 
+  save_and_show_plot(width = 6, height = 6, "FIG0211.png")
