@@ -12,6 +12,7 @@ BLUE2 <- "#4A81BF"
 BLUE3 <- "#94B2D7"
 BLUE4 <- "#94AFC5"
 BLUE5 <- "#22435e"
+BLUE6 <- "#95B3D7"
 RED1 <- "#C3514E"
 RED2 <- "#E6BAB7"
 RED3 <- "#800000"
@@ -19,7 +20,9 @@ GREEN1 <- "#0C8040"
 GREEN2 <- "#9ABB59"
 GREEN3 <- "#31859C"
 GREEN4 <- "#4BACC6"
+GREEN5 <- "#93CDDD"
 ORANGE1 <- "#F79747"
+ORANGE2 <- "#FAC090"
 
 theme_swd <- function() {
   theme_minimal(base_size = 8, base_family = "Helvetica") +
