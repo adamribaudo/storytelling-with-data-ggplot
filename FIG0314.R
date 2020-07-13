@@ -1,7 +1,3 @@
-#TODO:
-# - unclear if there's a better way to handle text alignment & position. If I use hjust = -X to move text left, 
-# the text after a line break is no longer left justified
-
 library(tidyverse)
 library(forcats)
 library(lemon)
