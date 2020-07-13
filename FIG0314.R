@@ -1,7 +1,3 @@
-# TODO:
-# - unclear if there's a better way to handle text alignment & position. If I use hjust = -X to move text left,
-# the text after a line break is no longer left justified
-
 library(tidyverse)
 library(forcats)
 library(lemon)
@@ -12,9 +8,12 @@ source("theme/theme_swd.R")
 theme_set(theme_swd() + theme(
   axis.title.y = element_blank(),
   plot.title = element_markdown(lineheight = 1.2),
-  plot.subtitle = element_markdown(lineheight = 1.5),
+  plot.subtitle = element_markdown(lineheight = 1.5, size = 10),
+  axis.text.x = element_text(size = 9, color = GRAY5),
   axis.text.y = element_text(color = GRAY4, size = 10),
   axis.title.x = element_text(color = GRAY5, size = 10, hjust = 0.05),  
+  axis.line.y = element_blank(),
+  axis.ticks.y = element_blank(),
   strip.placement = "outside",
   strip.background = element_rect(fill = NA, color = GRAY9)
 ))
