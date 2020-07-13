@@ -3,7 +3,8 @@ library(forcats)
 source("helper_functions.R")
 source("theme/theme_swd.R")
 
-theme_set(theme_swd() + theme(axis.ticks = element_blank(),
+theme_set(theme_swd() + theme(axis.ticks.y = element_blank(),
+                              axis.ticks.x = element_blank(),
                               axis.line = element_blank(),
                               plot.title = element_text(color = GRAY4, size = 16),
                               axis.title.y = element_blank(),
