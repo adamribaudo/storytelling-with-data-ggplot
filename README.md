@@ -29,7 +29,7 @@ Original data provided by the book's author. Located [here](http://www.storytell
 
 ## Chapter 3
 
-* [FIG0314](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0314.png) / [Code](FIG0314.R) - Incomplete
+* [FIG0314](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0314.png) / [Code](FIG0314.R)
 * [FIG0316](https://raw.githubusercontent.com/adamribaudo/storytelling-with-data-ggplot/master/plot%20output/FIG0316.png) / [Code](FIG0316.R)
 
 
